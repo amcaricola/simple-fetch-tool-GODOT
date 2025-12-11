@@ -30,11 +30,11 @@ The `FETCH` Singleton returns a `FETCH.RESPONSE` object. All calls must be prece
 ```gdscript
 # In any script (e.g., your GameController.gd)
 const URL = "YOUR_WEB_OR_API_URL"
-**
+
 
 func get_data():
     var result : FETCH.RESPONSE = await FETCH.GET(URL)
-    // this returns a RESPONSE class object
+    # this returns a RESPONSE class object
   
 ```
 ##### B. POST Request (Sending Data)
@@ -55,12 +55,14 @@ func send_data():
     
     # Add your own Headers
     var post_headers = [
-        "Content-Type: application/json", // "Content-Type: text/plain;charset=utf-8" 
+        "Content-Type: application/json", # "Content-Type: text/plain;charset=utf-8"
+		"User-Agent: Mozilla/5.0",
+		# Add any you need 
     ]
     
     # Asynchronous Call
     var result : FETCH.RESPONSE = await FETCH.POST(URL, post_headers, body_json)
-    // this returns a RESPONSE class object
+    # this returns a RESPONSE class object
     
 ```
 ##### C. FETCH.RESPONSE (OBJECT)
@@ -68,9 +70,9 @@ func send_data():
 ```gdscript
 
 class RESPONSE: 
-	var connection : int // HTTPRequest Result (Internal Godot Class)  RESULT_SUCCESS, RESULT_CONNECTION_ERROR
-	var status : int // HTTP code response -> 200, 300, 302 ... 
-	var headers :  PackedStringArray // http common headers 
-	var response :  String // Server response (usually needs to be transformed into JSON) 
+	var connection : int # HTTPRequest Result (Internal Godot Class)  RESULT_SUCCESS, RESULT_CONNECTION_ERROR
+	var status : int # HTTP code response -> 200, 300, 302 ... 
+	var headers :  PackedStringArray # http common headers 
+	var response :  String # Server response (usually needs to be transformed into JSON) 
   
 ```
