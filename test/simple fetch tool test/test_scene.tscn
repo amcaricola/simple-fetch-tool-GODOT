@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxkc24btxlv6v"]
+
+[ext_resource type="Script" uid="uid://db8it76dhdyp7" path="res://test/simple fetch tool test/test_script.gd" id="1_kbdwr"]
+
+[node name="test scene" type="Node"]
+script = ExtResource("1_kbdwr")
