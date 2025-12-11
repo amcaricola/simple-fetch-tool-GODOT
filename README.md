@@ -4,7 +4,7 @@ An addon (plugin) for Godot 4.x that implements a Global Singleton (autoload) na
 
 ## ⚙️ Features
 
-* **Global Singleton:** Access networking functionality from any script as `FETCH.POST(...)`.
+* **Global Singleton:** Access networking functionality from any script as `FETCH.GET(...)` or `FETCH.POST(...)`.
 * **Modern Asynchronous:** Uses Godot's `await` syntax for clean, non-blocking network calls.
 * **Safe Cleanup:** Automatically handles the creation and reliable destruction of `HTTPRequest` nodes to prevent memory leaks and network errors.
 
