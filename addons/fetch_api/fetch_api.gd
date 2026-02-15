@@ -60,8 +60,8 @@ func POST(URL:String, headers:PackedStringArray, body:String) -> RESPONSE:
 	return data
 
 
-func GET(URL:String) -> RESPONSE:
-	_do_fetch(URL,[], _callback_response)
+func GET(URL:String, headers:PackedStringArray = []) -> RESPONSE:
+	_do_fetch(URL,headers, _callback_response)
 	var data : RESPONSE = await self._data_recieved
 	return data
 
